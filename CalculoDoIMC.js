@@ -12,21 +12,31 @@ IMC em adultos Condição:
 -Entre 30 e 40, obeso;
 -Acima de 40, obesidade grave
 */
-
-const peso = 150;
-const altura = 1.65;
-const imc = peso / Math.pow(altura, 2);
-//Math.pow(altura, 2) potencia, biblioteca para potencia
-console.log(imc);
-
-if(imc < 18.5){
-    console.log("Você está abaixo do peso");
-} else if(imc >= 18.5 && imc < 25){
-    console.log("Você tem um peso normal");
-}else if(imc >= 25 && imc < 30){
-    console.log("Você está acima do peso");
-}else if(imc >= 30 && imc < 40){
-    console.log("Você está obeso");
-} else{
-    console.log("Você está com obesidade grave");
+function calcularImc(peso, altura){
+    return peso / Math.pow(altura, 2);
 }
+//Math.pow(altura, 2) potencia, biblioteca para potencia
+
+function classificarImc(imc){
+    if(imc < 18.5){
+        return ("Você está abaixo do peso");
+    } else if(imc >= 18.5 && imc < 25){
+        return ("Você tem um peso normal");
+    }else if(imc >= 25 && imc < 30){
+        return ("Você está acima do peso");
+    }else if(imc >= 30 && imc < 40){
+        return ("Você está obeso");
+    } else{
+        return ("Você está com obesidade grave");
+    }
+    
+}
+(function (){
+const peso = 65;
+const altura = 1.65;
+
+const imc = calcularImc(peso, altura);
+    console.log(classificarImc(imc));
+ })();
+
+    
